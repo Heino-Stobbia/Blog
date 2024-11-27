@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 
 // Auth API Calls
 Route::post('login', [AuthController::class ,'login']);
-Route::middleware('auth:sanctum')->post('logout', [AuthController::class, 'logout']);
+Route::post('logout', [AuthController::class, 'logout'])->middleware('auth:sanctum');
 Route::post('register', [AuthController::class ,'register']);
 
 // Posts API Calls
