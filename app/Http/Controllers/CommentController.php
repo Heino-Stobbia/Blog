@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class CommentController extends Controller
 {
     public function index() {
-        return view('posts.index');
+        // return view('posts.index');
     }
 
     public function save(Request $request, $id) {

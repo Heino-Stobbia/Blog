@@ -87,10 +87,17 @@ class PostsController extends Controller
             'message' => 'Post deleted successfully'
         ]);
     }
-    
-    public function getPosts() {
+
+    public function getPosts(Request $request) {
+
+        $search = $request->search;
+
+        $posts = Posts::when($search, function ($query, $search) {
+            $query->where('title', 'LIKE', "%{$search}%")->orWhere('content', 'LIKE', "%{$search}%");
+        })->get();
+
         return response()->json([
-            'posts' => Posts::all()
+            'posts' => $posts
         ]);
     }
 
