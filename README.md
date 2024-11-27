@@ -2,6 +2,7 @@
 
 This is a Laravel project for a simple blog application that includes user authentication, post management, and comment functionality.
 
+IF you get an error saying personal token table doens't exist run this command : php artisan migrate --path=/vendor/laravel/sanctum/database/migrations
 ## Table of Contents
 
 - [Database Schema](#database-schema)
